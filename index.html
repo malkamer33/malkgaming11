@@ -2,11 +2,49 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="MalakGaming - صفحة احترافية للألعاب والتكنولوجيا">
+    <meta name="keywords" content="MalakGaming, ألعاب, تكنولوجيا, YouTube, TikTok, Discord">
+    <meta name="author" content="MalakGaming">
+    
+    <!-- Mobile-specific meta tags -->
+    <meta name="theme-color" content="#00d4ff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MalakGaming">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="MalakGaming - صفحة احترافية">
+    <meta property="og:description" content="اكتشف عالم الألعاب والتكنولوجيا مع MalakGaming">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MalakGaming - صفحة احترافية">
+    <meta name="twitter:description" content="اكتشف عالم الألعاب والتكنولوجيا مع MalakGaming">
+    
     <title>ملك - PC WeCode</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
 </head>
 <body>
     <!-- Animated Background -->
@@ -14,7 +52,7 @@
         <div class="particles"></div>
         <div class="grid-overlay"></div>
     </div>
-
+    
     <!-- Main Container -->
     <div class="container">
         <!-- Header Section -->
@@ -22,43 +60,55 @@
             <div class="logo">
                 <i class="fas fa-laptop-code"></i>
             </div>
-            <h1 class="name">MalakGaming</h1>
+            <h1 class="name" data-text="MalakGaming">MalakGaming</h1>
             <p class="title">PC WeCode</p>
+            
+            <!-- Visitor Counter -->
+            <div class="visitor-counter">
+                <div class="counter-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="counter-content">
+                    <div class="counter-number" id="visitorCount">0</div>
+                    <div class="counter-label">زائر</div>
+                </div>
+                <div class="counter-sparkles"></div>
+            </div>
         </header>
-
+        
         <!-- Social Media Cards -->
         <section class="social-section">
             <h2 class="section-title">تواصل معنا</h2>
             <div class="social-cards">
                 <div class="social-card youtube-card" data-url="https://www.youtube.com/@MalakPX">
+                    <div class="card-glow"></div>
                     <div class="card-icon">
                         <i class="fab fa-youtube"></i>
                     </div>
                     <h3>يوتيوب</h3>
                     <p>تابعنا على يوتيوب</p>
-                    <div class="card-glow"></div>
                 </div>
-
+                
                 <div class="social-card tiktok-card" data-url="https://www.tiktok.com/@malak_gaming80">
+                    <div class="card-glow"></div>
                     <div class="card-icon">
                         <i class="fab fa-tiktok"></i>
                     </div>
                     <h3>تيك توك</h3>
                     <p>تابعنا على تيك توك</p>
-                    <div class="card-glow"></div>
                 </div>
-
+                
                 <div class="social-card discord-card" data-url="https://discord.gg/b7RZFJ6aSu">
+                    <div class="card-glow"></div>
                     <div class="card-icon">
                         <i class="fab fa-discord"></i>
                     </div>
                     <h3>ديسكورد</h3>
                     <p>انضم إلى سيرفرنا</p>
-                    <div class="card-glow"></div>
                 </div>
             </div>
         </section>
-
+        
         <!-- Config Cards Section -->
         <section class="config-section">
             <h2 class="section-title">باقات الكونفيج</h2>
@@ -87,7 +137,7 @@
                         </p>
                     </div>
                 </div>
-
+                
                 <div class="config-card vodafone-config">
                     <div class="config-header">
                         <div class="config-icon">
@@ -114,7 +164,7 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- Detailed Info Section -->
         <section class="info-section">
             <div class="info-card we-info">
@@ -127,7 +177,7 @@
                     <p><strong>ملحوظة:</strong> الباقة والكونفيج شغالين مع بعض، ومفيش تغيير في طريقة الشغل أو الشروط.</p>
                 </div>
             </div>
-
+            
             <div class="info-card vodafone-info">
                 <h3><i class="fas fa-signal"></i> كونفيج فودافون</h3>
                 <div class="info-content">
@@ -149,7 +199,23 @@
             </div>
         </section>
     </div>
-
+    
+    <!-- Scripts -->
     <script src="script.js"></script>
+    
+    <!-- Service Worker for PWA (optional) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
 </body>
 </html> 
