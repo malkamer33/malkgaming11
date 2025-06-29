@@ -2,427 +2,219 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر الهاردات - بيع هاردات الكمبيوتر</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Changa:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Cairo', 'Changa', sans-serif;
-            background: linear-gradient(135deg, #181c2f 0%, #232946 60%, #059669 100%);
-            margin: 0;
-            color: #e5e7ef;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-        .hero {
-            position: relative;
-            background: linear-gradient(120deg, #232946 60%, #059669 100%);
-            padding: 64px 0 80px 0;
-            text-align: center;
-            z-index: 2;
-        }
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-        .hero-logo {
-            width: 90px;
-            height: 90px;
-            background: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 18px auto;
-            box-shadow: 0 6px 32px #05966933;
-        }
-        .hero-logo img {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-        }
-        .hero-title {
-            font-size: 3.2rem;
-            font-family: 'Changa', 'Cairo', sans-serif;
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 18px;
-            letter-spacing: 2px;
-            text-shadow: 0 6px 32px #05966933, 0 2px 8px #23294699;
-        }
-        .hero-desc {
-            font-size: 1.35rem;
-            color: #a5b4fc;
-            margin-bottom: 32px;
-            font-weight: 500;
-        }
-        .hero-wave {
-            position: absolute;
-            left: 0; right: 0; bottom: -1px;
-            width: 100%;
-            z-index: 1;
-        }
-        .features-bar {
-            display: flex;
-            justify-content: center;
-            gap: 38px;
-            background: rgba(36, 41, 70, 0.85);
-            box-shadow: 0 4px 24px #23294633;
-            border-radius: 0 0 32px 32px;
-            padding: 18px 0 10px 0;
-            margin-bottom: 32px;
-            position: relative;
-            z-index: 2;
-        }
-        .feature {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.13rem;
-            color: #fff;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-        .feature i {
-            font-size: 1.3rem;
-            color: #6ee7b7;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 32px 16px 0 16px;
-            position: relative;
-            z-index: 2;
-        }
-        .section-title {
-            font-size: 2.1rem;
-            font-weight: 900;
-            margin: 48px 0 22px 0;
-            color: #a5b4fc;
-            text-align: right;
-            text-shadow: 0 2px 12px #23294655;
-            letter-spacing: 1px;
-        }
-        .hdd-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 38px;
-        }
-        .hdd-card {
-            background: rgba(255,255,255,0.13);
-            border-radius: 28px;
-            box-shadow: 0 12px 48px #23294655, 0 2px 12px #05966933;
-            padding: 36px 18px 32px 18px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: box-shadow 0.25s, transform 0.18s;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(8px);
-            border: 1.5px solid #a5b4fc33;
-            animation: fadeInUp 1s cubic-bezier(.39,.575,.565,1) both;
-        }
-        .hdd-card:hover {
-            box-shadow: 0 24px 64px #05966966, 0 8px 32px #2563eb55;
-            transform: translateY(-12px) scale(1.055);
-        }
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(40px); }
-            100% { opacity: 1; transform: none; }
-        }
-        .hdd-img {
-            width: 130px;
-            height: 130px;
-            object-fit: cover;
-            border-radius: 18px;
-            background: #f3f4f6;
-            margin-bottom: 18px;
-            border: 2.5px solid #2563eb33;
-            box-shadow: 0 2px 16px #05966922;
-            display: block;
-        }
-        .hdd-name {
-            font-size: 1.22rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: #fff;
-            text-align: center;
-            letter-spacing: 0.5px;
-            text-shadow: 0 2px 8px #23294699;
-        }
-        .hdd-price {
-            font-size: 1.18rem;
-            color: #6ee7b7;
-            font-weight: 700;
-            margin-bottom: 14px;
-            letter-spacing: 0.5px;
-            text-shadow: 0 2px 8px #23294699;
-        }
-        .order-btn {
-            background: linear-gradient(90deg, #2563eb 0%, #059669 100%);
-            color: #fff;
-            border: none;
-            border-radius: 12px;
-            padding: 14px 32px;
-            font-size: 1.13rem;
-            font-weight: 800;
-            cursor: pointer;
-            margin-top: 12px;
-            transition: background 0.2s, transform 0.18s, box-shadow 0.18s;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 2px 16px #2563eb22;
-            letter-spacing: 0.5px;
-        }
-        .order-btn:hover {
-            background: linear-gradient(90deg, #059669 0%, #2563eb 100%);
-            transform: scale(1.08);
-            box-shadow: 0 8px 32px #05966933;
-        }
-        .whatsapp-float {
-            position: fixed;
-            left: 24px;
-            bottom: 24px;
-            z-index: 200;
-            animation: floatW 2.5s infinite ease-in-out;
-        }
-        @keyframes floatW {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px) scale(1.08); }
-        }
-        .whatsapp-float a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, #25d366 60%, #059669 100%);
-            color: #fff;
-            border-radius: 50%;
-            font-size: 2.4rem;
-            box-shadow: 0 4px 32px #25d36655;
-            transition: background 0.2s, transform 0.18s;
-            text-decoration: none;
-            border: 2.5px solid #fff;
-        }
-        .whatsapp-float a:hover {
-            background: #128c7e;
-            transform: scale(1.13);
-        }
-        .footer {
-            background: linear-gradient(90deg, #181c2f 0%, #2563eb 60%, #059669 100%);
-            color: #fff;
-            text-align: center;
-            padding: 44px 0 20px 0;
-            margin-top: 80px;
-            font-size: 1.13rem;
-            border-radius: 40px 40px 0 0;
-            letter-spacing: 1px;
-            box-shadow: 0 -8px 32px #23294633;
-            font-family: 'Changa', 'Cairo', sans-serif;
-        }
-        .footer-icons {
-            margin: 18px 0 0 0;
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-        }
-        .footer-icons a {
-            color: #6ee7b7;
-            font-size: 1.7rem;
-            transition: color 0.2s;
-        }
-        .footer-icons a:hover {
-            color: #a5b4fc;
-        }
-        @media (max-width: 900px) {
-            .hero-title { font-size: 2.1rem; }
-            .features-bar { flex-direction: column; gap: 12px; border-radius: 0 0 18px 18px; }
-            .container { padding: 12px 4px 0 4px; }
-        }
-        @media (max-width: 700px) {
-            .hdd-list { grid-template-columns: 1fr; }
-            .footer { font-size: 1rem; padding: 24px 0 10px 0; }
-            .hero { padding: 32px 0 40px 0; }
-        }
-        
-        .back-btn:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="MalakGaming - صفحة احترافية للألعاب والتكنولوجيا">
+    <meta name="keywords" content="MalakGaming, ألعاب, تكنولوجيا, YouTube, TikTok, Discord">
+    <meta name="author" content="MalakGaming">
+    
+    <!-- Mobile-specific meta tags -->
+    <meta name="theme-color" content="#00d4ff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MalakGaming">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="MalakGaming - صفحة احترافية">
+    <meta property="og:description" content="اكتشف عالم الألعاب والتكنولوجيا مع MalakGaming">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MalakGaming - صفحة احترافية">
+    <meta name="twitter:description" content="اكتشف عالم الألعاب والتكنولوجيا مع MalakGaming">
+    
+    <title>ملك - PC WeCode</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
 </head>
 <body>
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-logo">
-                <img src="images/logo.svg" alt="شعار الهاردات">
-            </div>
-            <div class="hero-title" style="background: linear-gradient(90deg,#6ee7b7 10%,#2563eb 60%,#a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; font-size:3.3rem; letter-spacing:3px; text-shadow:0 8px 32px #05966955,0 2px 8px #23294699; font-family:'Changa','Cairo',sans-serif; font-weight:900;">MALAKSTORE</div>
-            <div class="hero-desc">أقوى تشكيلة هاردات أصلية بأسعار تنافسية<br>توصيل سريع لجميع المحافظات وخدمة عملاء مميزة</div>
-            <a href="index.html" class="back-btn" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 25px; margin-top: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;">
-                <i class="fas fa-arrow-right"></i>
-                العودة للصفحة الرئيسية
-            </a>
-        </div>
-        <div class="hero-wave">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="120"><path fill="#181c2f" fill-opacity="1" d="M0,64L60,74.7C120,85,240,107,360,117.3C480,128,600,128,720,112C840,96,960,64,1080,53.3C1200,43,1320,53,1380,58.7L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z"></path></svg>
-        </div>
-    </section>
-    <div class="features-bar">
-        <div class="feature"><i class="fas fa-shipping-fast"></i>توصيل سريع</div>
-        <div class="feature"><i class="fas fa-headset"></i>دعم فني</div>
-        <div class="feature"><i class="fas fa-tags"></i>أسعار منافسة</div>
+    <!-- Animated Background -->
+    <div class="animated-background">
+        <div class="particles"></div>
+        <div class="grid-overlay"></div>
     </div>
+    
+    <!-- Main Container -->
     <div class="container">
-        <div class="section-title">💽 هارد 500 جيجا</div>
-        <div class="hdd-list">
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/WD-Blue-500GB.jpg" alt="WD Blue 500GB">
-                <div class="hdd-name">WD Blue 500GB</div>
-                <div class="hdd-price">400 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد WD Blue 500GB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
             </div>
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/Seagate-Barracuda-500GB.jpg" alt="Seagate Barracuda 500GB">
-                <div class="hdd-name">Seagate Barracuda 500GB</div>
-                <div class="hdd-price">450 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد Seagate Barracuda 500GB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
+            <h1 class="name" data-text="MalakGaming">MalakGaming</h1>
+            <p class="title">PC WeCode</p>
+            
+            <!-- Visitor Counter -->
+            
+        
+        <!-- Social Media Cards -->
+        <section class="social-section">
+            <h2 class="section-title">تواصل معنا</h2>
+            <div class="social-cards">
+                <div class="social-card youtube-card" data-url="https://www.youtube.com/@MalakPX">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>يوتيوب</h3>
+                    <p>تابعنا على يوتيوب</p>
+                </div>
+                
+                <div class="social-card tiktok-card" data-url="https://www.tiktok.com/@malak_gaming80">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3>تيك توك</h3>
+                    <p>تابعنا على تيك توك</p>
+                </div>
+                
+                <div class="social-card hardware-card" data-url="hardware.html">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <h3>متجر الهاردات</h3>
+                    <p>هاردات أصلية بأسعار منافسة</p>
+                </div>
+                
+                <div class="social-card discord-card" data-url="https://discord.gg/b7RZFJ6aSu">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <h3>ديسكورد</h3>
+                    <p>انضم إلى سيرفرنا</p>
+                </div>
             </div>
-        </div>
-        <div class="section-title">💽 هارد 1 تيرا</div>
-        <div class="hdd-list">
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/WD-Blue-1TB.jpg" alt="WD Blue 1TB">
-                <div class="hdd-name">WD Blue 1TB</div>
-                <div class="hdd-price">1200 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد WD Blue 1TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
+        </section>
+        
+        <!-- Config Cards Section -->
+        <section class="config-section">
+            <h2 class="section-title">باقات الكونفيج</h2>
+            <div class="config-cards">
+                <div class="config-card we-config">
+                    <div class="config-header">
+                        <div class="config-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3>WeConfig</h3>
+                    </div>
+                    <div class="config-content">
+                        <div class="price">50 جنيه</div>
+                        <div class="duration">شهرياً</div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> باقة بلايستيشن WE</li>
+                            <li><i class="fas fa-check"></i> شرح كامل ومختصر</li>
+                            <li><i class="fas fa-check"></i> صالحة لمدة 30 يوم</li>
+                            <li><i class="fas fa-check"></i> تعمل على جميع الأجهزة</li>
+                        </ul>
+                    </div>
+                    <div class="config-footer">
+                        <p class="discord-note">
+                            <i class="fab fa-discord"></i>
+                            للشراء: انضم إلى الديسكورد
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="config-card vodafone-config">
+                    <div class="config-header">
+                        <div class="config-icon">
+                            <i class="fas fa-signal"></i>
+                        </div>
+                        <h3>VodafoneConfig</h3>
+                    </div>
+                    <div class="config-content">
+                        <div class="price">80 جنيه</div>
+                        <div class="duration">شهرياً</div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> إنترنت منفصل عن الباقة الأساسية</li>
+                            <li><i class="fas fa-check"></i> اتصال سريع ومستقر</li>
+                            <li><i class="fas fa-check"></i> صالحة لمدة 30 يوم</li>
+                            <li><i class="fas fa-check"></i> لا يتأثر بباقتك الأساسية</li>
+                        </ul>
+                    </div>
+                    <div class="config-footer">
+                        <p class="discord-note">
+                            <i class="fab fa-discord"></i>
+                            للشراء: انضم إلى الديسكورد
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/Seagate-Barracuda-1TB.jpg" alt="Seagate Barracuda 1TB">
-                <div class="hdd-name">Seagate Barracuda 1TB</div>
-                <div class="hdd-price">1250 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد Seagate Barracuda 1TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
+        </section>
+        
+        <!-- Detailed Info Section -->
+        <section class="info-section">
+            <div class="info-card we-info">
+                <h3><i class="fas fa-wifi"></i> كونفيج باقة بلايستيشن WE</h3>
+                <div class="info-content">
+                    <p><strong>أولاً:</strong> الباقة مش شغالة لوحدها بالكونفيج، لازم تشترك فيها من موقع WE. الكونفيج بيخلي الباقة تشتغل على كل الأجهزة، مش بس البلايستيشن.</p>
+                    <p>بتشتري الباقة من الموقع، وبعدها تشتري كونفيج.</p>
+                    <p>الجيجات بتتسحب من باقة البلايستيشن طول ما بتستخدم الكونفيج.</p>
+                    <p>الكونفيج بينتهي بعد 30 يوم من شرائه (سعره 50 جنيه للشهر). بعدها بتشتري واحد تاني.</p>
+                    <p><strong>ملحوظة:</strong> الباقة والكونفيج شغالين مع بعض، ومفيش تغيير في طريقة الشغل أو الشروط.</p>
+                </div>
             </div>
-        </div>
-        <div class="section-title">💽 هارد 2 تيرا</div>
-        <div class="hdd-list">
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/Toshiba-Hitachi-2TB.jpg" alt="Toshiba / Hitachi 2TB">
-                <div class="hdd-name">Toshiba / Hitachi 2TB</div>
-                <div class="hdd-price">1750 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد Toshiba / Hitachi 2TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
+            
+            <div class="info-card vodafone-info">
+                <h3><i class="fas fa-signal"></i> كونفيج فودافون</h3>
+                <div class="info-content">
+                    <p><strong>أولاً:</strong> الباقة الأساسية بتاعتك مش محتاجة أي إضافات أو باقات حماية طالما هي شغالة، حتى لو الجيجات خلصت!</p>
+                    <h4>إزاى بيشتغل الكونفيج؟</h4>
+                    <ul>
+                        <li>الكونفيج هيوفر لك إنترنت كامل منفصل عن باقة فودافون الأساسية.</li>
+                        <li>مش هيتأثر بأي حاجة في باقتك (حتى لو الجيجات خلصت أو الباقة قاربت تنتهي).</li>
+                        <li>السعر: 80 جنيه لمدة 30 يوم.</li>
+                    </ul>
+                    <h4>المميزات:</h4>
+                    <ul>
+                        <li>اتصال سريع ومستقر بدون تقطيع.</li>
+                        <li>تقدر تستخدمه على عدد معين من الأجهزة (بنحدده حسب طلبك).</li>
+                        <li>لو زاد العدد عن المتفق عليه، ممكن السرعة تقل أو ينقطع.</li>
+                    </ul>
+                    <p><strong>ملحوظة مهمة:</strong> الكونفيج مش هيتأثر بباقتك الأساسية، حتى لو معندكش جيجات!</p>
+                </div>
             </div>
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/WD-Black-2TB.jpg" alt="WD Black 2TB">
-                <div class="hdd-name">WD Black 2TB</div>
-                <div class="hdd-price">1950 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد WD Black 2TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/WD-Red-2TB.jpg" alt="WD Red 2TB">
-                <div class="hdd-name">WD Red 2TB</div>
-                <div class="hdd-price">2300 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد WD Red 2TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/WD-Blue-2TB.jpg" alt="WD Blue 2TB">
-                <div class="hdd-name">WD Blue 2TB</div>
-                <div class="hdd-price">2200 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد WD Blue 2TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/Seagate-Barracuda-2TB.jpg" alt="Seagate Barracuda 2TB">
-                <div class="hdd-name">Seagate Barracuda 2TB</div>
-                <div class="hdd-price">2200 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد Seagate Barracuda 2TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/Seagate-FireCuda-2TB.jpg" alt="Seagate FireCuda 2TB">
-                <div class="hdd-name">Seagate FireCuda 2TB</div>
-                <div class="hdd-price">2300 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد Seagate FireCuda 2TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-        </div>
-        <div class="section-title">💽 هارد 3 تيرا</div>
-        <div class="hdd-list">
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/Toshiba-Hitachi-3TB.jpg" alt="Toshiba / Hitachi 3TB">
-                <div class="hdd-name">Toshiba / Hitachi 3TB</div>
-                <div class="hdd-price">1950 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد Toshiba / Hitachi 3TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/Seagate-3TB.jpg" alt="Seagate 3TB">
-                <div class="hdd-name">Seagate 3TB</div>
-                <div class="hdd-price">2350 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد Seagate 3TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/WD-Blue-3TB.jpg" alt="WD Blue 3TB">
-                <div class="hdd-name">WD Blue 3TB</div>
-                <div class="hdd-price">2500 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد WD Blue 3TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/WD-Red-3TB.jpg" alt="WD Red 3TB">
-                <div class="hdd-name">WD Red 3TB</div>
-                <div class="hdd-price">2650 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد WD Red 3TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/WD-Black-3TB.jpg" alt="WD Black 3TB">
-                <div class="hdd-name">WD Black 3TB</div>
-                <div class="hdd-price">2750 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد WD Black 3TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-        </div>
-        <div class="section-title">💽 هارد 4 تيرا</div>
-        <div class="hdd-list">
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/WD-Blue-4TB.jpg" alt="WD Blue 4TB">
-                <div class="hdd-name">WD Blue 4TB</div>
-                <div class="hdd-price">3750 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد WD Blue 4TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/WD-Red-4TB.jpg" alt="WD Red 4TB">
-                <div class="hdd-name">WD Red 4TB</div>
-                <div class="hdd-price">3850 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد WD Red 4TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/WD-Black-4TB.jpg" alt="WD Black 4TB">
-                <div class="hdd-name">WD Black 4TB</div>
-                <div class="hdd-price">3950 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد WD Black 4TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-        </div>
-        <div class="section-title">💽 هارد 10 تيرا</div>
-        <div class="hdd-list">
-            <div class="hdd-card">
-                <img class="hdd-img" src="images/Seagate-10TB.jpg" alt="Seagate 10TB">
-                <div class="hdd-name">Seagate 10TB</div>
-                <div class="hdd-price">7850 جنيه</div>
-                <a class="order-btn" href="https://wa.me/201507875527?text=أريد Seagate 10TB" target="_blank"><i class="fab fa-whatsapp"></i>اطلب عبر واتساب</a>
-            </div>
-        </div>
+        </section>
     </div>
-    <div class="whatsapp-float">
-        <a href="https://wa.me/201507875527" target="_blank" title="تواصل واتساب"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    <footer class="footer">
-        <div>&copy; 2024 malakstore - جميع الحقوق محفوظة | تصميم واجهة فاخرة</div>
-        <div class="footer-icons">
-            <a href="https://wa.me/201507875527" target="_blank" title="واتساب"><i class="fab fa-whatsapp"></i></a>
-        </div>
-    </footer>
+    
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    
+    <!-- Service Worker for PWA (optional) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
 </body>
 </html> 
