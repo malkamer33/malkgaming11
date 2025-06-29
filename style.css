@@ -626,6 +626,23 @@ body {
     color: #7289da;
 }
 
+.hardware-card {
+    border-color: #059669;
+}
+
+.hardware-card:hover {
+    background: rgba(5, 150, 105, 0.12);
+    border-color: #10b981;
+    box-shadow: 
+        0 30px 60px rgba(5, 150, 105, 0.4),
+        0 0 40px rgba(5, 150, 105, 0.3),
+        inset 0 0 20px rgba(5, 150, 105, 0.1);
+}
+
+.hardware-card .card-icon {
+    color: #059669;
+}
+
 /* Enhanced Config Cards */
 .config-section {
     margin: 100px 0;
